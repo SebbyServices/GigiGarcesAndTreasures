@@ -1,0 +1,23 @@
+<div class="announce">Handcrafted treasures, made in small batches &nbsp;&middot;&nbsp; Free US shipping over $75</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="{{ '/' | relative_url }}">GigiG <span class="amp">&amp;</span> Treasures</a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="{{ '/catalog' | relative_url }}"{% if page.url contains '/catalog' %} class="active"{% endif %}>Shop</a></li>
+        <li><a href="{{ '/catalog' | relative_url }}#categories"{% if page.url contains '/catalog' %} aria-current="false"{% endif %}>Collections</a></li>
+        <li><a href="{{ '/about' | relative_url }}"{% if page.url == '/about/' or page.url == '/about' %} class="active"{% endif %}>Meet Gigi</a></li>
+        <li><a href="{{ '/blog' | relative_url }}"{% if page.url contains '/blog' %} class="active"{% endif %}>Journal</a></li>
+        <li><a href="{{ '/contact' | relative_url }}"{% if page.url contains '/contact' %} class="active"{% endif %}>Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      {% if page.layout == 'product' %}
+      <a class="back-btn" href="{{ '/catalog' | relative_url }}">&larr; All Jewelry</a>
+      {% endif %}
+    </div>
+  </div>
+</header>

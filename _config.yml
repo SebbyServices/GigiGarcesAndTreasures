@@ -1,0 +1,29 @@
+title: "GigiG & Treasures"
+description: "Handmade jewelry in solid brass, sterling silver, and natural stone. Made with love, one piece at a time."
+url: "https://gigigarcesandtreasures.com"
+baseurl: ""
+email: "gigigarcesandtreasures@gmail.com"
+instagram: "Gigigarcesandtreasures"
+shopify_domain: "gigigarcesandtreasures.com"
+
+collections:
+  products:
+    output: true
+    permalink: /products/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "products"
+    values:
+      layout: product
+
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - "*.sh"

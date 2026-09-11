@@ -1,0 +1,30 @@
+---
+layout: default
+title: Journal
+---
+
+<section style="padding-top: 0;">
+  <div class="wrap" style="padding-top: 60px;">
+    <div class="section-head">
+      <span class="eyebrow">The Journal</span>
+      <h1 style="font-size: clamp(32px, 4vw, 50px); margin-bottom: 12px;">Notes from the studio</h1>
+      <p>Care guides, behind-the-scenes stories, and news from GigiG &amp; Treasures.</p>
+    </div>
+
+    <div class="blog-grid">
+      {% for post in site.posts %}
+      <a class="blog-card" href="{{ post.url | relative_url }}">
+        <div class="blog-card-body">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    {% if site.posts.size == 0 %}
+    <p style="text-align:center; padding: 60px 0; color: #5A5344;">No posts yet — check back soon.</p>
+    {% endif %}
+  </div>
+</section>

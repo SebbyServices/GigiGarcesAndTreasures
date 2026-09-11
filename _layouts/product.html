@@ -1,0 +1,197 @@
+---
+layout: default
+---
+<div class="product-layout">
+
+  <!-- ── Left: Image carousel ── -->
+  <div class="product-media">
+    <div class="carousel" id="carousel">
+      <div class="carousel-track" id="carousel-track">
+        {% for img in page.images %}
+        <div class="carousel-slide">
+          <img
+            src="{{ img | relative_url }}"
+            alt="{{ page.title }}{% if page.images.size > 1 %} — image {{ forloop.index }}{% endif %}"
+            {% if forloop.first %}loading="eager"{% else %}loading="lazy"{% endif %}>
+        </div>
+        {% endfor %}
+      </div>
+
+      {% if page.images.size > 1 %}
+      <button class="carousel-btn carousel-btn--prev" aria-label="Previous image">&#8249;</button>
+      <button class="carousel-btn carousel-btn--next" aria-label="Next image">&#8250;</button>
+      <div class="carousel-dots">
+        {% for img in page.images %}
+        <button class="carousel-dot{% if forloop.first %} active{% endif %}" aria-label="Go to image {{ forloop.index }}"></button>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    {% if page.images.size > 1 %}
+    <div class="carousel-thumbs">
+      {% for img in page.images %}
+      <img
+        src="{{ img | relative_url }}"
+        alt="{{ page.title }}"
+        loading="lazy"
+        class="carousel-thumb{% if forloop.first %} active{% endif %}"
+        data-index="{{ forloop.index0 }}">
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div><!-- /product-media -->
+
+  <!-- ── Right: Details ── -->
+  <div class="product-details">
+
+    <h1>{{ page.title }}</h1>
+    <p class="product-subtitle">Handmade with love by <strong>GigiG</strong></p>
+
+    <div class="product-price">{{ page.price }}</div>
+    <p class="product-tax-note">Tax included. Shipping calculated at checkout.</p>
+
+    <!-- Trust badges -->
+    <div class="trust-bar">
+      <div class="trust-badge">
+        <div class="trust-badge-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A9853E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L9 7H3l5 4-2 7 6-4 6 4-2-7 5-4h-6z"/></svg>
+        </div>
+        <div class="trust-badge-label">Handmade</div>
+        <div class="trust-badge-sub">One of a kind</div>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A9853E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="trust-badge-label">Free Shipping</div>
+        <div class="trust-badge-sub">Orders $75+</div>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A9853E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="trust-badge-label">Final Sale</div>
+        <div class="trust-badge-sub">All sales final</div>
+      </div>
+    </div>
+
+    <!-- Buy now -->
+    <div class="product-buy">
+      <a
+        class="btn btn-buy"
+        href="https://gigigarcesandtreasures.com/products/{{ page.shopify_handle }}"
+        target="_blank"
+        rel="noopener">
+        Buy Now &rarr;
+      </a>
+    </div>
+
+    <!-- Accordions -->
+    <div class="accordions">
+
+      <!-- Description (open by default) -->
+      {% if page.description %}
+      <div class="accordion-section">
+        <button class="accordion-btn" aria-expanded="true">
+          Description <span class="accordion-icon">−</span>
+        </button>
+        <div class="accordion-body open">
+          {{ page.description | markdownify }}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Materials & Details -->
+      <div class="accordion-section">
+        <button class="accordion-btn" aria-expanded="false">
+          Materials &amp; Details <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <ul>
+            <li>Genuine natural stone beads</li>
+            <li>Gold-tone &amp; silver-tone metal accents</li>
+            <li>Durable stretch cord or lobster clasp closure</li>
+            <li>Nickel-free &amp; hypoallergenic</li>
+            <li>Each piece is unique &mdash; slight variations in color and pattern are natural</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sizing & Fit -->
+      <div class="accordion-section">
+        <button class="accordion-btn" aria-expanded="false">
+          Sizing &amp; Fit <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <p style="margin-bottom:8px;">All jewelry is handcrafted to standard sizing:</p>
+          <ul>
+            <li><strong>Necklaces:</strong> 16&ndash;20&Prime; (adjustable)</li>
+            <li><strong>Bracelets:</strong> 7&Prime; standard (stretch fit)</li>
+            <li><strong>Rings:</strong> Available in sizes 5&ndash;9</li>
+          </ul>
+          <p style="margin-top:10px;font-size:13px;color:#888;">
+            Need a custom size?
+            <a href="mailto:{{ site.email }}">Contact us</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Care Instructions -->
+      <div class="accordion-section">
+        <button class="accordion-btn" aria-expanded="false">
+          Care Instructions <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <ul>
+            <li>Store in a cool, dry place &mdash; preferably in a soft pouch or jewelry box</li>
+            <li>Avoid contact with water, perfumes, lotions, and harsh chemicals</li>
+            <li>Remove before swimming, showering, or exercising</li>
+            <li>Gently wipe with a soft cloth after wearing to maintain shine</li>
+            <li>Handle with care &mdash; handmade pieces are crafted with love, not machines</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Shipping & Sales Policy -->
+      <div class="accordion-section">
+        <button class="accordion-btn" aria-expanded="false">
+          Shipping &amp; Sales Policy <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <p><strong>Shipping:</strong></p>
+          <ul style="margin-bottom:12px;">
+            <li>Free standard shipping on orders over $75</li>
+            <li>US orders ship within 3&ndash;5 business days</li>
+            <li>Each piece is carefully packaged for safe delivery</li>
+          </ul>
+          <p><strong>Sales Policy:</strong></p>
+          <ul>
+            <li><strong>All sales are final</strong> &mdash; no returns, exchanges, or refunds</li>
+            <li>Each piece is handmade and unique &mdash; please review photos carefully before purchasing</li>
+            <li>If your order arrives damaged, contact us within 48 hours with photos and we will make it right</li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /accordions -->
+
+    <hr class="accordion-bottom-hr">
+
+    <!-- Ask / Share row -->
+    <div class="product-action-row">
+      <a href="mailto:{{ site.email }}?subject=Question about {{ page.title | uri_escape }}">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+        Ask a Question
+      </a>
+      <button id="share-btn" data-title="{{ page.title | escape }}">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+        Share
+      </button>
+    </div>
+
+  </div><!-- /product-details -->
+
+</div><!-- /product-layout -->
+
+<script src="{{ '/assets/js/product.js' | relative_url }}"></script>

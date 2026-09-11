@@ -1,0 +1,117 @@
+---
+layout: default
+title: Shop All Jewelry
+---
+
+<div class="catalog-header">
+  <div class="wrap">
+    <span class="eyebrow">The Collection</span>
+    <h1>All Jewelry</h1>
+    <p>Every piece is handmade in small batches by Gigi. No two exactly alike.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="catalog-filters" id="categories" role="navigation" aria-label="Filter by category">
+    <a href="{{ '/catalog' | relative_url }}" class="filter-btn active" data-category="all">All</a>
+    <a href="{{ '/catalog' | relative_url }}?category=necklaces" class="filter-btn" data-category="necklaces">Necklaces</a>
+    <a href="{{ '/catalog' | relative_url }}?category=rings" class="filter-btn" data-category="rings">Rings</a>
+    <a href="{{ '/catalog' | relative_url }}?category=bracelets" class="filter-btn" data-category="bracelets">Bracelets</a>
+  </div>
+
+  <div class="products-grid" id="products-grid">
+    {% for product in site.products %}
+    <a
+      class="product-card"
+      href="{{ product.url | relative_url }}"
+      data-category="{{ product.category }}">
+      <div
+        class="arch ph"
+        style="background-image: url('{{ product.images[0] | relative_url }}');">
+      </div>
+      <h3>{{ product.title }}</h3>
+      <div class="price">{{ product.price }}</div>
+    </a>
+    {% endfor %}
+  </div>
+
+  <div id="no-results" style="display:none; text-align:center; padding:60px 0; color:#5A5344;">
+    <p style="font-size:18px; margin-bottom:12px;">No pieces in this category yet.</p>
+    <p>New collections coming soon — <a href="{{ '/catalog' | relative_url }}">see all jewelry</a>.</p>
+  </div>
+</div>
+
+<!-- ── Categories strip ── -->
+<section id="category-images" style="padding-top:80px;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Collections</span>
+      <h2>Browse by category</h2>
+    </div>
+    <div class="cats">
+      <a class="cat" href="{{ '/catalog' | relative_url }}?category=necklaces">
+        <div class="arch c1 ph" style="background-image: url('{{ '/assets/images/category-necklaces.png' | relative_url }}'); background-size: cover; background-position: center;"></div>
+        <h3>Necklaces</h3>
+        <span>{% assign nc = site.products | where: "category", "necklaces" | size %}{{ nc }} {% if nc == 1 %}piece{% else %}pieces{% endif %}</span>
+      </a>
+      <a class="cat" href="{{ '/catalog' | relative_url }}?category=rings">
+        <div class="arch c3 ph" style="background-image: url('{{ '/assets/images/category-rings.png' | relative_url }}'); background-size: cover; background-position: center;"></div>
+        <h3>Rings</h3>
+        <span>Coming soon</span>
+      </a>
+      <a class="cat" href="{{ '/catalog' | relative_url }}?category=bracelets">
+        <div class="arch c2 ph" style="background-image: url('{{ '/assets/images/category-bracelets.png' | relative_url }}'); background-size: cover; background-position: center;"></div>
+        <h3>Bracelets</h3>
+        <span>Coming soon</span>
+      </a>
+      <a class="cat" href="{{ '/catalog' | relative_url }}">
+        <div class="arch c4 ph" style="background-image: url('{{ '/assets/images/category-all-jewelry.png' | relative_url }}'); background-size: cover; background-position: center;"></div>
+        <h3>All Jewelry</h3>
+        <span>{{ site.products | size }} pieces</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  // Read ?category= from URL and activate the matching filter button
+  var params  = new URLSearchParams(location.search);
+  var cat     = params.get('category') || 'all';
+  var cards   = document.querySelectorAll('.product-card');
+  var btns    = document.querySelectorAll('.filter-btn');
+  var grid    = document.getElementById('products-grid');
+  var noRes   = document.getElementById('no-results');
+
+  btns.forEach(function (btn) {
+    btn.classList.toggle('active', btn.dataset.category === cat);
+  });
+
+  var visible = 0;
+  cards.forEach(function (card) {
+    var match = cat === 'all' || card.dataset.category === cat;
+    card.style.display = match ? 'block' : 'none';
+    if (match) visible++;
+  });
+
+  noRes.style.display = visible === 0 ? 'block' : 'none';
+
+  // In-page filter click (no reload)
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var selected = btn.dataset.category;
+      history.replaceState(null, '', selected === 'all' ? location.pathname : '?category=' + selected);
+
+      btns.forEach(function (b) { b.classList.toggle('active', b.dataset.category === selected); });
+      var v = 0;
+      cards.forEach(function (card) {
+        var show = selected === 'all' || card.dataset.category === selected;
+        card.style.display = show ? 'block' : 'none';
+        if (show) v++;
+      });
+      noRes.style.display = v === 0 ? 'block' : 'none';
+    });
+  });
+})();
+</script>

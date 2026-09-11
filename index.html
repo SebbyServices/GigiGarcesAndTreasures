@@ -1,0 +1,194 @@
+---
+layout: default
+title: Handmade Jewelry by Gigi Garces
+---
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Handmade Jewelry</span>
+      <h1>Treasures made <span class="script">by hand,</span> one piece at a time</h1>
+      <p>Small-batch jewelry in solid brass, sterling silver, and natural stone. Every piece designed, made, and finished by Gigi herself. No two exactly alike.</p>
+      <div class="hero-cta">
+        <a class="btn" href="{{ '/catalog' | relative_url }}">Shop the Treasures</a>
+        <a class="btn btn-ghost" href="{{ '/about' | relative_url }}">Meet Gigi</a>
+      </div>
+    </div>
+    <div>
+      <div
+        class="arch hero-img"
+        style="background-image: url('{{ '/assets/images/hero-image.png' | relative_url }}');"
+        role="img"
+        aria-label="Gigi's handmade jewelry photographed in her studio">
+      </div>
+      <p class="hero-note">Photographed in Gigi's studio</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Bestsellers ── -->
+<section id="shop">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Bestsellers</span>
+      <h2>The treasures they come back for</h2>
+    </div>
+    <div class="products-grid">
+      {% assign featured = site.products | where: "title", "Layered Turquoise & Silver Beaded Necklace with Heart Charm" | first %}
+      {% assign featured2 = site.products | where: "title", "Lobster Necklace" | first %}
+      {% assign featured3 = site.products | where: "title", "Red Coral Starfish Necklace" | first %}
+      {% assign featured4 = site.products | where: "title", "Layered Neutral Beaded Necklace with Gold Nautilus Pendant" | first %}
+      {% assign featured_products = site.products %}
+
+      {% for product in site.products limit: 4 %}
+      <a class="product-card" href="{{ product.url | relative_url }}">
+        <div
+          class="arch ph"
+          style="background-image: url('{{ product.images[0] | relative_url }}');">
+        </div>
+        <h3>{{ product.title }}</h3>
+        <div class="price">{{ product.price }}</div>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="products-cta">
+      <a class="btn btn-ghost" href="{{ '/catalog' | relative_url }}">View All Treasures</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Meet Gigi ── -->
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div
+      class="arch ph"
+      style="background-image: url('{{ '/assets/images/meet-gigi.png' | relative_url }}'); background-size: cover; background-position: center top;"
+      role="img"
+      aria-label="Gigi at work in her jewelry studio">
+    </div>
+    <div>
+      <span class="eyebrow">Meet Gigi</span>
+      <h2>Every treasure has <span class="script">a story</span></h2>
+      <p>GigiG and Treasures started at my kitchen table with a handful of beads, a coil of wire, and the idea that jewelry should feel personal.</p>
+      <p>Every piece in this shop is still made the same way. By hand, in small batches, with materials I would wear myself. Nothing is mass-produced, and no two pieces are exactly alike. When you wear a GigiG treasure, you are wearing something one person made just for you.</p>
+      <a class="btn btn-light" href="{{ '/about' | relative_url }}">Read Gigi's Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Categories ── -->
+<section id="categories">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Collections</span>
+      <h2>Find your treasure</h2>
+    </div>
+    <div class="cats">
+      <a class="cat" href="{{ '/catalog' | relative_url }}?category=necklaces">
+        <div
+          class="arch c1 ph"
+          style="background-image: url('{{ '/assets/images/category-necklaces.png' | relative_url }}'); background-size: cover; background-position: center;">
+        </div>
+        <h3>Necklaces</h3>
+        <span>{% assign n_count = site.products | where: "category", "necklaces" | size %}{{ n_count }} {% if n_count == 1 %}piece{% else %}pieces{% endif %}</span>
+      </a>
+      <a class="cat" href="{{ '/catalog' | relative_url }}?category=rings">
+        <div
+          class="arch c3 ph"
+          style="background-image: url('{{ '/assets/images/category-rings.png' | relative_url }}'); background-size: cover; background-position: center;">
+        </div>
+        <h3>Rings</h3>
+        <span>Coming soon</span>
+      </a>
+      <a class="cat" href="{{ '/catalog' | relative_url }}?category=bracelets">
+        <div
+          class="arch c2 ph"
+          style="background-image: url('{{ '/assets/images/category-bracelets.png' | relative_url }}'); background-size: cover; background-position: center;">
+        </div>
+        <h3>Bracelets</h3>
+        <span>Coming soon</span>
+      </a>
+      <a class="cat" href="{{ '/catalog' | relative_url }}">
+        <div
+          class="arch c4 ph"
+          style="background-image: url('{{ '/assets/images/category-all-jewelry.png' | relative_url }}'); background-size: cover; background-position: center;">
+        </div>
+        <h3>All Jewelry</h3>
+        <span>{{ site.products | size }} pieces</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Why GigiG ── -->
+<section class="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The GigiG Difference</span>
+      <h2>Why handmade matters</h2>
+    </div>
+    <div class="why-grid">
+      <div>
+        <div class="gem" aria-hidden="true"></div>
+        <h3>Made to Order</h3>
+        <p>Most treasures are made after you order them, so nothing sits in a warehouse and nothing goes to waste.</p>
+      </div>
+      <div>
+        <div class="gem" aria-hidden="true"></div>
+        <h3>Honest Materials</h3>
+        <p>Solid brass, sterling silver, and genuine stone. No plating that fades, no mystery metals.</p>
+      </div>
+      <div>
+        <div class="gem" aria-hidden="true"></div>
+        <h3>Built to Last</h3>
+        <p>Every piece is finished by hand and inspected by Gigi before it ships. If something ever fails, we repair it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Testimonials ── -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Kind Words</span>
+      <h2>From our treasure hunters</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote">
+        <p>You can tell a real person made this. The craftsmanship is unreal for the price.</p>
+        <cite>Maria G.</cite>
+      </div>
+      <div class="quote">
+        <p>I get compliments every single time I wear my GigiG necklace.</p>
+        <cite>Danielle R.</cite>
+      </div>
+      <div class="quote">
+        <p>Arrived beautifully packaged with a handwritten note from Gigi. Instant repeat customer.</p>
+        <cite>Alissa T.</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Newsletter ── -->
+<section class="signup" id="contact">
+  <div class="wrap">
+    <span class="eyebrow">The Treasure List</span>
+    <h2>First look, <span class="script">first dibs</span></h2>
+    <p>Small batches sell out. Join the list for early access to new drops and 10% off your first order.</p>
+    <form
+      class="signup-form"
+      action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID"
+      method="POST">
+      <input
+        type="email"
+        name="email"
+        placeholder="Your email address"
+        aria-label="Email address"
+        required>
+      <button class="btn btn-light" type="submit">Join the Treasure List</button>
+    </form>
+  </div>
+</section>
