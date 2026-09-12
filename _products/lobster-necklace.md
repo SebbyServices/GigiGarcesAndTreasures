@@ -3,8 +3,8 @@ layout: product
 title: Lobster Necklace
 category: necklaces
 images:
-  - /product3_photo1.png
-  - /product3_photo2.png
+  - /assets/images/product3_photo1.png
+  - /assets/images/product3_photo2.png
 excerpt: A playful yet refined necklace centered on a hand-sculpted lobster charm in warm gold tone. Conversation-starting jewelry, handmade by Gigi.
 ---
 
