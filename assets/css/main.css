@@ -756,13 +756,19 @@ footer li a:hover { color: var(--gold); }
 .about-hero h1 { font-size: clamp(32px, 4vw, 50px); margin-bottom: 20px; }
 .about-hero p { font-size: 17px; line-height: 1.8; color: #4A443A; margin-bottom: 18px; max-width: 54ch; }
 
-/* ============ Contact form ============ */
+/* ============ Contact ============ */
 .contact-layout {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 1fr 1fr;
   gap: 70px;
   align-items: start;
   padding: 76px 0 90px;
+}
+.contact-direct {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
 }
 .contact-info h1 { font-size: clamp(28px, 3.5vw, 44px); margin-bottom: 18px; }
 .contact-info p { font-size: 16px; line-height: 1.8; color: #4A443A; margin-bottom: 18px; }
