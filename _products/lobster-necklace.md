@@ -1,12 +1,10 @@
 ---
 layout: product
 title: Lobster Necklace
-shopify_handle: asset-pack-87695785986-example-product-3
-price: "$99.00"
 category: necklaces
 images:
-  - /assets/images/product3_photo1.png
-  - /assets/images/product3_photo2.png
+  - /product3_photo1.png
+  - /product3_photo2.png
 excerpt: A playful yet refined necklace centered on a hand-sculpted lobster charm in warm gold tone. Conversation-starting jewelry, handmade by Gigi.
 ---
 

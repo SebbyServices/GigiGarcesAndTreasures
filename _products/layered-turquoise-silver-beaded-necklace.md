@@ -1,12 +1,10 @@
 ---
 layout: product
 title: Layered Turquoise & Silver Beaded Necklace with Heart Charm
-shopify_handle: asset-pack-87695785986-example-product-2
-price: "$99.00"
 category: necklaces
 images:
-  - /assets/images/product2_photo1.png
-  - /assets/images/product2_photo2.png
+  - /product2_photo1.png
+  - /product2_photo2.png
 excerpt: Two strands of genuine turquoise and silver beads, finished with a delicate heart charm. A GigiG bestseller.
 ---
 

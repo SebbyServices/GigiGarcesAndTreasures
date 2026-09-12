@@ -48,9 +48,6 @@ layout: default
     <h1>{{ page.title }}</h1>
     <p class="product-subtitle">Handmade with love by <strong>GigiG</strong></p>
 
-    <div class="product-price">{{ page.price }}</div>
-    <p class="product-tax-note">Tax included. Shipping calculated at checkout.</p>
-
     <!-- Trust badges -->
     <div class="trust-bar">
       <div class="trust-badge">
@@ -60,30 +57,21 @@ layout: default
         <div class="trust-badge-label">Handmade</div>
         <div class="trust-badge-sub">One of a kind</div>
       </div>
-      <div class="trust-badge">
-        <div class="trust-badge-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A9853E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        </div>
-        <div class="trust-badge-label">Free Shipping</div>
-        <div class="trust-badge-sub">Orders $75+</div>
-      </div>
-      <div class="trust-badge">
-        <div class="trust-badge-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A9853E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M9 12l2 2 4-4"/></svg>
-        </div>
-        <div class="trust-badge-label">Final Sale</div>
-        <div class="trust-badge-sub">All sales final</div>
-      </div>
     </div>
 
-    <!-- Buy now -->
+    <!-- Inquiry CTAs -->
     <div class="product-buy">
       <a
         class="btn btn-buy"
-        href="https://gigigarcesandtreasures.com/products/{{ page.shopify_handle }}"
+        href="https://www.instagram.com/gigigarcesandtreasures/"
         target="_blank"
         rel="noopener">
-        Buy Now &rarr;
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:6px;"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Inquire on Instagram
+      </a>
+      <a
+        class="btn btn-buy btn-buy--secondary"
+        href="mailto:{{ site.email }}?subject=Inquiry: {{ page.title | uri_escape }}">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:6px;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>Send an Email
       </a>
     </div>
 
@@ -153,23 +141,24 @@ layout: default
         </div>
       </div>
 
-      <!-- Shipping & Sales Policy -->
+      <!-- Interested in this piece? -->
       <div class="accordion-section">
         <button class="accordion-btn" aria-expanded="false">
-          Shipping &amp; Sales Policy <span class="accordion-icon">+</span>
+          Interested in this piece? <span class="accordion-icon">+</span>
         </button>
         <div class="accordion-body">
-          <p><strong>Shipping:</strong></p>
-          <ul style="margin-bottom:12px;">
-            <li>Free standard shipping on orders over $75</li>
-            <li>US orders ship within 3&ndash;5 business days</li>
-            <li>Each piece is carefully packaged for safe delivery</li>
-          </ul>
-          <p><strong>Sales Policy:</strong></p>
-          <ul>
-            <li><strong>All sales are final</strong> &mdash; no returns, exchanges, or refunds</li>
-            <li>Each piece is handmade and unique &mdash; please review photos carefully before purchasing</li>
-            <li>If your order arrives damaged, contact us within 48 hours with photos and we will make it right</li>
+          <p style="margin-bottom:12px;">Gigi takes orders by DM and email. Reach out and she will get back to you personally.</p>
+          <ul class="inquiry-links">
+            <li>
+              <a href="https://www.instagram.com/gigigarcesandtreasures/" target="_blank" rel="noopener">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:5px;"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@Gigigarcesandtreasures on Instagram
+              </a>
+            </li>
+            <li>
+              <a href="mailto:{{ site.email }}?subject=Inquiry: {{ page.title | uri_escape }}">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:5px;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>{{ site.email }}
+              </a>
+            </li>
           </ul>
         </div>
       </div>
