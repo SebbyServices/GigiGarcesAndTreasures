@@ -49,22 +49,22 @@ title: The Collection
     </div>
     <div class="cats">
       <a class="cat" href="{{ '/catalog' | relative_url }}?category=necklaces">
-        <div class="arch c1 ph" style="background-image: url('{{ '/category-necklaces.png' | relative_url }}'); background-size: cover; background-position: center;"></div>
+        <div class="arch c1 ph" style="background-image: url('{{ '/assets/images/category-necklaces.webp' | relative_url }}'); background-size: cover; background-position: center;"></div>
         <h3>Necklaces</h3>
         <span>{% assign nc = site.products | where: "category", "necklaces" | size %}{{ nc }} {% if nc == 1 %}piece{% else %}pieces{% endif %}</span>
       </a>
       <a class="cat" href="{{ '/catalog' | relative_url }}?category=rings">
-        <div class="arch c3 ph" style="background-image: url('{{ '/category-rings.png' | relative_url }}'); background-size: cover; background-position: center;"></div>
+        <div class="arch c3 ph" style="background-image: url('{{ '/assets/images/category-rings.webp' | relative_url }}'); background-size: cover; background-position: center;"></div>
         <h3>Rings</h3>
         <span>Coming soon</span>
       </a>
       <a class="cat" href="{{ '/catalog' | relative_url }}?category=bracelets">
-        <div class="arch c2 ph" style="background-image: url('{{ '/category-bracelets.png' | relative_url }}'); background-size: cover; background-position: center;"></div>
+        <div class="arch c2 ph" style="background-image: url('{{ '/assets/images/category-bracelets.webp' | relative_url }}'); background-size: cover; background-position: center;"></div>
         <h3>Bracelets</h3>
         <span>Coming soon</span>
       </a>
       <a class="cat" href="{{ '/catalog' | relative_url }}">
-        <div class="arch c4 ph" style="background-image: url('{{ '/category-all-jewelry.png' | relative_url }}'); background-size: cover; background-position: center;"></div>
+        <div class="arch c4 ph" style="background-image: url('{{ '/assets/images/category-all-jewelry.webp' | relative_url }}'); background-size: cover; background-position: center;"></div>
         <h3>All Jewelry</h3>
         <span>{{ site.products | size }} pieces</span>
       </a>

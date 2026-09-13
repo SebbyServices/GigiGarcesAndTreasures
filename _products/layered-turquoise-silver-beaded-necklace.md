@@ -3,8 +3,8 @@ layout: product
 title: Layered Turquoise & Silver Beaded Necklace with Heart Charm
 category: necklaces
 images:
-  - /assets/images/product2_photo1.png
-  - /assets/images/product2_photo2.png
+  - /assets/images/product2_photo1.webp
+  - /assets/images/product2_photo2.webp
 excerpt: Two strands of genuine turquoise and silver beads, finished with a delicate heart charm. A GigiG bestseller.
 ---
 

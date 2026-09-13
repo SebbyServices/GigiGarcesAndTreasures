@@ -16,7 +16,7 @@ title: Handmade Jewelry by Gigi Garces
       </div>
     </div>
     <div>
-      <div class="arch hero-img" style="background-image: url('{{ '/assets/images/hero-image.png' | relative_url }}');"></div>
+      <div class="arch hero-img" style="background-image: url('{{ '/assets/images/hero-image.webp' | relative_url }}');"></div>
     </div>
   </div>
 </section>
@@ -45,7 +45,7 @@ title: Handmade Jewelry by Gigi Garces
 <!-- ── Meet Gigi ── -->
 <section class="story">
   <div class="wrap story-grid" data-reveal-group>
-    <div class="arch" style="background-image: url('{{ '/assets/images/meet-gigi.png' | relative_url }}'); background-size: cover; background-position: center;"></div>
+    <div class="arch" style="background-image: url('{{ '/assets/images/meet-gigi.webp' | relative_url }}'); background-size: cover; background-position: center;"></div>
     <div>
       <span class="eyebrow">Meet Gigi</span>
       <h2>Every treasure has <span class="script">a story</span></h2>
@@ -65,22 +65,22 @@ title: Handmade Jewelry by Gigi Garces
     </div>
     <div class="cats" data-reveal-group>
       <a class="cat" href="{{ '/catalog' | relative_url }}?category=necklaces">
-        <div class="arch" style="background-image: url('{{ '/assets/images/category-necklaces.png' | relative_url }}'); background-size: cover; background-position: center;"></div>
+        <div class="arch" style="background-image: url('{{ '/assets/images/category-necklaces.webp' | relative_url }}'); background-size: cover; background-position: center;"></div>
         <h3>Necklaces</h3>
         <span>{% assign nc = site.products | where: "category", "necklaces" | size %}{{ nc }} {% if nc == 1 %}piece{% else %}pieces{% endif %}</span>
       </a>
       <a class="cat" href="{{ '/catalog' | relative_url }}?category=rings">
-        <div class="arch" style="background-image: url('{{ '/assets/images/category-rings.png' | relative_url }}'); background-size: cover; background-position: center;"></div>
+        <div class="arch" style="background-image: url('{{ '/assets/images/category-rings.webp' | relative_url }}'); background-size: cover; background-position: center;"></div>
         <h3>Rings</h3>
         <span>Coming soon</span>
       </a>
       <a class="cat" href="{{ '/catalog' | relative_url }}?category=bracelets">
-        <div class="arch" style="background-image: url('{{ '/assets/images/category-bracelets.png' | relative_url }}'); background-size: cover; background-position: center;"></div>
+        <div class="arch" style="background-image: url('{{ '/assets/images/category-bracelets.webp' | relative_url }}'); background-size: cover; background-position: center;"></div>
         <h3>Bracelets</h3>
         <span>Coming soon</span>
       </a>
       <a class="cat" href="{{ '/catalog' | relative_url }}">
-        <div class="arch" style="background-image: url('{{ '/assets/images/category-all-jewelry.png' | relative_url }}'); background-size: cover; background-position: center;"></div>
+        <div class="arch" style="background-image: url('{{ '/assets/images/category-all-jewelry.webp' | relative_url }}'); background-size: cover; background-position: center;"></div>
         <h3>All Jewelry</h3>
         <span>{{ site.products | size }} pieces</span>
       </a>

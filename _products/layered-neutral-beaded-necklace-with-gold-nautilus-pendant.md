@@ -3,8 +3,8 @@ layout: product
 title: Layered Neutral Beaded Necklace with Gold Nautilus Pendant
 category: necklaces
 images:
-  - /assets/images/product3_photo1.png
-  - /assets/images/product3_photo2.png
+  - /assets/images/product3_photo1.webp
+  - /assets/images/product3_photo2.webp
 excerpt: Warm neutral stone beads in a layered silhouette, anchored by an antique-inspired gold nautilus pendant. Understated elegance, handmade by Gigi.
 ---
 
