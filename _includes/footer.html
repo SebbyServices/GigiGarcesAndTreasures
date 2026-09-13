@@ -4,6 +4,15 @@
       <div>
         <a class="logo" href="{{ '/' | relative_url }}">GigiG <span class="amp">&amp;</span> Treasures</a>
         <p>Handmade jewelry in solid brass, sterling silver, and natural stone. Made with love, one piece at a time.</p>
+        <div class="foot-social">
+          <a href="https://instagram.com/{{ site.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+        </div>
       </div>
       <div>
         <h4>Jewelry</h4>
@@ -26,7 +35,11 @@
     </div>
     <div class="foot-bottom">
       <span>&copy; {{ 'now' | date: "%Y" }} GigiG &amp; Treasures. All rights reserved.</span>
-      <span>Made to order &nbsp;&middot;&nbsp; Handmade with love</span>
+      <div class="foot-links">
+        <a href="{{ '/privacy' | relative_url }}">Privacy Policy</a>
+        <a href="{{ '/terms' | relative_url }}">Terms of Use</a>
+      </div>
+      <span class="foot-credit">Website by <a href="https://madebysebby.com" target="_blank" rel="noopener">Made&nbsp;by&nbsp;Sebby</a></span>
     </div>
   </div>
 </footer>

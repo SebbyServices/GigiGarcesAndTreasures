@@ -24,11 +24,11 @@ title: Handmade Jewelry by Gigi Garces
 <!-- ── Featured pieces ── -->
 <section>
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <span class="eyebrow">The Collection</span>
       <h2>The treasures they come back for</h2>
     </div>
-    <div class="products-grid">
+    <div class="products-grid" data-reveal-group>
       {% for product in site.products limit:4 %}
       <a class="product-card" href="{{ product.url | relative_url }}">
         <div class="arch ph" style="background-image: url('{{ product.images[0] | relative_url }}');"></div>
@@ -36,7 +36,7 @@ title: Handmade Jewelry by Gigi Garces
       </a>
       {% endfor %}
     </div>
-    <div class="products-cta">
+    <div class="products-cta" data-reveal>
       <a class="btn btn-ghost" href="{{ '/catalog' | relative_url }}">View All Pieces</a>
     </div>
   </div>
@@ -44,7 +44,7 @@ title: Handmade Jewelry by Gigi Garces
 
 <!-- ── Meet Gigi ── -->
 <section class="story">
-  <div class="wrap story-grid">
+  <div class="wrap story-grid" data-reveal-group>
     <div class="arch" style="background-image: url('{{ '/assets/images/meet-gigi.png' | relative_url }}'); background-size: cover; background-position: center;"></div>
     <div>
       <span class="eyebrow">Meet Gigi</span>
@@ -59,11 +59,11 @@ title: Handmade Jewelry by Gigi Garces
 <!-- ── Categories ── -->
 <section id="categories">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <span class="eyebrow">Collections</span>
       <h2>Find your treasure</h2>
     </div>
-    <div class="cats">
+    <div class="cats" data-reveal-group>
       <a class="cat" href="{{ '/catalog' | relative_url }}?category=necklaces">
         <div class="arch" style="background-image: url('{{ '/assets/images/category-necklaces.png' | relative_url }}'); background-size: cover; background-position: center;"></div>
         <h3>Necklaces</h3>
@@ -91,11 +91,11 @@ title: Handmade Jewelry by Gigi Garces
 <!-- ── Why handmade ── -->
 <section class="why">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <span class="eyebrow">The GigiG Difference</span>
       <h2>Why handmade matters</h2>
     </div>
-    <div class="why-grid">
+    <div class="why-grid" data-reveal-group>
       <div>
         <div class="gem" aria-hidden="true"></div>
         <h3>Made by Hand</h3>
@@ -116,7 +116,7 @@ title: Handmade Jewelry by Gigi Garces
 </section>
 
 <!-- ── Instagram CTA ── -->
-<section class="signup">
+<section class="signup" data-reveal>
   <div class="wrap">
     <span class="eyebrow">Stay Connected</span>
     <h2>New pieces, <span class="script">first look</span></h2>
